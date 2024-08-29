@@ -19,7 +19,7 @@ export const createUserSlice: StateCreator<
   [],
   UserSlice
 > = (set) => ({
-  address: "test address",
+  address: "",
   age: 0,
   fullName: "",
   userName: "",
