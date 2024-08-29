@@ -1,3 +1,4 @@
+import { User } from "./components/User";
 import { Cart } from "./components/cart";
 import { ChangeQtyButton } from "./components/change-qty-button";
 import { Button } from "./components/ui/button";
@@ -16,7 +17,10 @@ function App() {
 
   return (
     <main className="space-y-2 dark h-screen bg-background max-w-sm mx-auto mt-2">
-      <Cart />
+      <div className="w-full flex items-center justify-between">
+        <User />
+        <Cart />
+      </div>
       <h1 className="text-2xl">Products:</h1>
       <div className="space-y-2">
         {PRODUCTS_DATA.map((product) => (
