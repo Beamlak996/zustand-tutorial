@@ -24,7 +24,7 @@ export const Cart = () => {
                     <ShoppingCart />
                 </Button>
             </PopoverTrigger>
-            <PopoverContent className="max-h-[600px] overflow-y-auto  space-y-2 w-96" >
+            <PopoverContent className="overflow-y-auto  space-y-2 w-96" >
                 <div className="flex gap-2 text-lg items-center" >
                     <h1>Cart:</h1>
                     <Button onClick={reset} variant="destructive" size="icon" >
