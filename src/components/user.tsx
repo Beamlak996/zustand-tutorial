@@ -5,18 +5,28 @@ import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover"
 import { UserIcon } from "lucide-react";
 import { Label } from "./ui/label";
 import { Input } from "./ui/input";
+import { useEffect } from "react";
 
 
 
 export const User = () => {
-    const { address, setAddress, userName, fullName } = useStore(
+    const { address, setAddress, userName, fullName, fetchUser } = useStore(
       useShallow((state) => ({
         address: state.address,
         setAddress: state.setAddress,
         userName: state.userName,
         fullName: state.fullName,
+        fetchUser: state.fetchUser
       }))
     );
+
+    useEffect(()=> {
+        async function fetchData() {
+            await fetchUser()
+        }
+
+        fetchData()
+    }, [fetchUser])
 
     return (
       <Popover>
